@@ -1,0 +1,37 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>administrator</title>
+</head>
+<body>
+<h2>This is the administrator</h2>
+<br>
+    Name: {{answers}}
+        <br>
+        <br>
+        <br>
+
+{% for i in profile_details %}
+
+        question: {{i.question}}
+        <br>
+
+        Response:
+        {{i.response}}
+        <br>
+        <br>
+{{i.date_time}}
+<br>
+<br>
+        <a href="/comment/{{i.profile.pk}}/{{i.question.q_no}}">comment and point</a>
+        <br>
+        <br>
+
+{% endfor %}
+
+
+
+</body>
+</html>

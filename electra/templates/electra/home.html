@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>electra</title>
+</head>
+<body>
+
+<h2>Question : {{needed.question_text}}</h2>
+
+
+<form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Submit</button>
+    </form>
+
+{{link.response}}
+
+</body>
+</html>

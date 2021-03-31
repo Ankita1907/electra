@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}ELECTRA{% endblock title %}
+{% block content %}
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: url('{% static 'electra/images/ee.jpg' %}');
+   min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+    .b1{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: table;
+  background-size: cover;
+}
+.b1 .in1{
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+.content{
+  margin: auto;
+  text-align: center;
+  margin-top: -200px;
+
+}
+.content h1{
+  font-family: 'Century Gothic',sans-serif;
+  color: #f9f3f4;
+  font-size: 400%;
+  text-shadow: 0 0 300px #000;
+  margin-bottom:10px;
+}
+.rulebox p{
+     font-family: 'Century Gothic',sans-serif;
+  color: #f9f3f4;
+    font-weight: 700;
+    margin: 5% 5%;
+    text-align: center;
+    justify-content: center;
+  text-shadow: 0 0 300px #000;
+  margin-bottom: 30px;
+}
+.rulebox{
+  background-color: rgba(0,0,0, 0.6);
+  width: 65vw;
+  margin-left: 20vw;
+    margin-bottom: 20px;
+  padding: 10px 0px 10px;
+  border-radius: 2%;
+}
+.content .btn{
+  border-radius: 9px;
+  color: #f9f3f4;
+  text-decoration: none;
+  font-family: 'Century Gothic',sans-serif;
+  border: 3px solid;
+  padding: 7px 100px;
+  font-weight: bold;
+  margin-top: 10px;
+
+}
+.content .btn:hover{
+  color: #2196f3;
+}
+@media only screen and (max-width: 768px)
+{
+  .content h1{
+    font-size: 200%;
+    margin-bottom: 20px;
+  }
+  .content p{
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+  .rulebox{
+  background-color: rgba(0,0,0, 0.6);
+  width: 80vw;
+  margin-left: 10vw;
+  padding: 2px 0px 2px;
+  border-radius: 2%;
+
+}
+  .rulebox p{
+      font-size:9px;
+      margin-bottom: 30px;
+  }
+
+}
+
+
+
+
+
+/cursor animation/
+.cursor{
+  position: fixed;
+  width:40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  left:0;
+  right:0;
+  pointer-events: none;
+  transform:translate(-50%,-50%);
+  transition: .1s
+}
+.cursor2{
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color:#fff;
+  border-radius: 50%;
+  left:0;
+  top:0;
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+  transition: .15s;
+}
+
+
+
+
+  /*footer styling */
+    footer{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #001121!important;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 10px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1rem;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem 0 .5rem 0;
+}
+.socials li{
+    margin: 0 0px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.2rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: #6FDEFF;
+}
+    </style>
+ <section class="b1">
+  <div class="in1">
+    <div class="content">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      <h1 style="font-family: 'Orbitron', sans-serif;">TUTORIALS</h1>
+        <br>
+        <br>
+
+
+        <p style=""></p>
+
+<video width=80% height=auto controls src="https://drive.google.com/file/d/1w2b8FhA7J1a3lAemBMLLnZF9EmOS_6pR/view">
+  Your browser does not support the video tag.
+</video>
+
+          <br>
+          <br>
+          <br>
+
+<video width=80% height=auto controls src="movie.ogg">
+  Your browser does not support the video tag.
+</video>
+
+
+    <
+</div>
+</section>
+<div class="cursor"></div>
+<div class="cursor2"></div>
+
+
+
+<!--cursor script-->
+  <script>
+    var cursor=document.querySelector(".cursor");
+    var cursor2=document.querySelector(".cursor2");
+    document.addEventListener("mousemove",function(e){
+      cursor.style.cssText = cursor2.style.cssText="left: " +e.clientX + "px; top: " + e.clientY + "px;";
+    });
+  </script>
+
+
+{% endblock %}

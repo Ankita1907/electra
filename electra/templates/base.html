@@ -1,0 +1,379 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/static/response/images/bluelogo2.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .fufu {
+      text-align: center;
+      ;
+    }
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+      opacity: 0.7;
+    }
+
+
+    body {
+      height: 100vh;
+    }
+
+    /*mynav*/
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+    nav {
+      background-color: rgba(0,0,0, 0.6);
+    }
+
+    nav:after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+
+    nav .logo {
+      float: left;
+      color: white;
+      font-size: 27px;
+      padding-top: 10px;
+      font-weight: 600;
+      line-height: 70px;
+      padding-left: 60px;
+    }
+
+    nav ul {
+      float: right;
+      margin-right: 40px;
+      list-style: none;
+      position: relative;
+    }
+
+    nav ul li {
+      float: left;
+      display: inline-block;
+      background-color: transparent;
+      margin: 0 5px;
+    }
+
+    nav ul li a {
+      color: white;
+      line-height: 70px;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 15px;
+    }
+
+    nav ul li a:hover {
+      color: cyan;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #33ffff,
+        0 0 10px #66ffff;
+    }
+
+    .show,
+    .icon,
+    input {
+      display: none;
+    }
+
+    .fa-plus {
+      font-size: 15px;
+      margin-left: 40px;
+    }
+
+    @media all and (max-width: 968px) {
+      nav ul {
+        margin-right: 0px;
+        float: left;
+      }
+
+      nav .logo {
+        padding-left: 30px;
+        width: 100%;
+      }
+
+      .show+a,
+      ul {
+        display: none;
+      }
+
+      nav ul li,
+      nav ul ul li {
+        display: block;
+        width: 100%;
+      }
+
+      nav ul li a:hover {
+        box-shadow: none;
+      }
+
+      .show {
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+      }
+
+      .show:hover {
+        color: cyan;
+      }
+
+      .icon {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        line-height: 70px;
+        cursor: pointer;
+        font-size: 25px;
+      }
+
+      nav ul ul {
+        top: 70px;
+        border-top: 0px;
+        float: none;
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      [id^=btn]:checked+ul {
+        display: block;
+      }
+
+      nav ul ul li {
+        border-bottom: 0px;
+      }
+
+      span.cancel:before {
+        content: '\f00d';
+      }
+    }
+
+    .mytext {
+      color: blanchedalmond;
+      text-align: center;
+      position: relative;
+      top: 30%;
+
+    }
+
+    .socialhandle {
+      text-align: center;
+      margin-top: 100px;
+      color: blanchedalmond;
+    }
+
+    .google {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: blanchedalmond;
+    }
+
+    #txtbox {
+      height: 80px;
+      width: 1000px;
+    }
+
+    .btn10 {
+      text-align: center;
+      top: 40px;
+      font-family: "proxima-nova", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      text-transform: uppercase !important;
+      letter-spacing: 2px;
+      color: #fff;
+      cursor: hand;
+      text-align: center;
+      text-transform: capitalize;
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 50px;
+      position: relative;
+      overflow: hidden !important;
+      -webkit-transition: all .9s ease-in-out;
+      -moz-transition: all .9s ease-in-out;
+      -o-transition: all .9s ease-in-out;
+      transition: all .9s ease-in-out;
+      background: blanchedalmond !important;
+      z-index: 10;
+    }
+
+
+    .btn10:hover {
+      border: 1px solid #071982;
+      color: #8880ff !important;
+    }
+
+    .btn10::before {
+      content: '';
+      width: 0%;
+      height: 100%;
+      display: block;
+      background-color: rgba(0,0,0, 0.6);
+      position: absolute;
+      -ms-transform: skewX(-20deg);
+      -webkit-transform: skewX(-20deg);
+      transform: skewX(-20deg);
+      left: -10%;
+      opacity: 1;
+      top: 0;
+      z-index: -12;
+      -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+      -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+      -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+      transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+      box-shadow: 2px 0px 14px rgba(0, 0, 0, .6);
+    }
+
+    .btn10::after {
+      content: '';
+      width: 0%;
+      height: 100%;
+      display: block;
+      background: #ffffff;
+      position: absolute;
+      -ms-transform: skewX(-20deg);
+      -webkit-transform: skewX(-20deg);
+      transform: skewX(-20deg);
+      left: -10%;
+      opacity: 0;
+      top: 0;
+      z-index: -15;
+      -webkit-transition: all .94s cubic-bezier(.2, .95, .57, .99);
+      -moz-transition: all .4s cubic-bezier(.2, .95, .57, .99);
+      -o-transition: all .4s cubic-bezier(.2, .95, .57, .99);
+      transition: all .4s cubic-bezier(.2, .95, .57, .99);
+      box-shadow: 2px 0px 14px rgba(0, 0, 0, .6);
+    }
+
+    .btn10:hover::before,
+    .btn1O:hover::before {
+      opacity: 1;
+      width: 116%;
+    }
+
+    .btn10:hover::after,
+    .btn1O:hover::after {
+      opacity: 1;
+      width: 120%;
+    }
+
+    .btn10 {
+      padding: 15px 100px;
+      margin: 240px 40px 0px 40px;
+      color: rgb(0, 0, 0);
+      font-family: sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+      text-decoration: none;
+      display: inline-block;
+
+    }
+
+    @media(max-width:768px) {
+
+      .btn10 {
+        padding: 15px 20px;
+        margin: 120px 40px -40px 40px;
+      }
+
+      .mytext {
+        top: 20%
+      }
+
+    }
+
+    
+
+    .brand-logo {
+      margin-top: -80px;
+      color: #fff;
+      display: inline-block;
+      font-size: 2.1rem;
+      padding: 0;
+      white-space: nowrap;
+      font-family: 'Pacifico', cursive;
+      text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 6px #292736, 0 0 8px #292736, 0 0 10px #292736, 0 0 12px #292736, 0 0 14px #292736;
+      animation: glow .59s infinite alternate;
+    }
+
+    /* Animation as suggested by Ismail Ghallou */
+    @keyframes glow {
+      to {
+        text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #d25ed4, 0 0 16px #d25ed4, 0 0 20px #d25ed4, 0 0 24px #d25ed4, 0 0 28px #d25ed4;
+      }
+    }
+
+    .brand-logo {
+      text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 6px #292736, 0 0 8px #292736, 0 0 10px #292736, 0 0 12px #292736, 0 0 14px #292736;
+      animation: glow .59s infinite alternate;
+    }
+  </style>
+  {% block styles %}
+  {% endblock styles %}
+
+</head>
+
+<body id="back">
+  {% if user.is_authenticated %}
+
+  <nav>
+    <div class="logo">
+      <img style="width:100;height:50px;" src="{% static 'electra/images/aarohan.jpg' %}">
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn">
+    <ul>
+      <li><a href="/start">Rules</a></li>
+      <li><a href="/questions">Navigation</a></li>
+      <li><a href="/tutorial">Tutorial</a></li>
+      <li><a href="/leaderboard">Leaderboard</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  {% endif %}
+  {% block content%}
+
+  {% endblock %}
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</html>
